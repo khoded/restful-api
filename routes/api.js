@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 //read
 router.get('/ninjas', function (req, res) {
 	// body...
@@ -10,7 +11,11 @@ router.get('/ninjas', function (req, res) {
 //create
 router.post('/ninjas', function (req, res) {
 	// body...
-	res.send({type:"POST"})
+	console.log(req.body);
+	res.send({
+		type:"POST",
+		name: req.body.name
+	})
 })
 
 //update
